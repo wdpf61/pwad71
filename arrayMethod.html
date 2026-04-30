@@ -44,6 +44,10 @@
         // ]
 
 
+
+
+
+
         // 1. push() - Adds elements to the end
 
         // console.log(numbers);
@@ -229,20 +233,39 @@
             { id: 1, name: "Masud", age: 25, total: 2000 },
             { id: 5, name: "Rahman", age: 40, total: 500 },
             { id: 6, name: "Jamal", age: 60, total: 800 },
+            { id: 7, name: "Jamal", age: 60, total: 1200 },
+            { id: 8, name: "Jamal", age: 60, total: 400 }
         ]
 
 
+         let total = 0;
+         let abcd= sales.filter( (s) =>{
+              if(s.age == 60){
+                total+= s.total
+              }
+         })
 
+         console.log(total)
 
+      let netTotal= sales.reduce((total,sale)=>{return total + sale.total},0)
+      
+      console.log(netTotal);
+      
 
         // 12. filter() - Filters elements based on a condition
 
-        let sales1 = sales.filter((s) => {
-            return s.id != 1;
+        let young_person= sales.filter((sale)=>{
+                if(sale.age  >= 20  &&  sale.age <= 30){
+                   return sale;
+                }
+         })
+
+        let id=sales.filter( (s)=>{
+             return s.name == "Jamal";
         });
-
-        let nettotal = sales1.reduce((acc, sales) => { return acc + sales.total }, 0);
-
+      
+        console.log(id);
+         
         // console.log(sales1);
         // console.log(nettotal);
 
@@ -262,27 +285,21 @@
         //  })
         // console.log(upto1000Tk);
 
-        // let total= (data)=>{
-        //    let netTotal=0;
-        //    data.filter((s)=>{
-        //      if(s.age > 18){
-        //        netTotal+= s.total;
-        //      }
-        //    });
-
-        //    return netTotal;
-
-        // }
-
-        // console.log(total(sales))
+        
 
         // 14. find() - Finds the first element that matches a condition
+
         //  numbers = [1, 2, 3, 4, 5];
         // const num3 = numbers.find((num)=>{
-        //      return num > 2
+        //      return num == 2
         // })
 
+        // let num4 = numbers.filter(function(n){
+        //     return  n == 2;
+        // });
+
         // console.log(num3)
+        // console.log(num4)
 
         // 13. reduce() - Reduces array to a single value
 
@@ -302,16 +319,16 @@
         // 16. sort() - Sorts an array
         // 17. reverse() - Reverses an array
 
-        numbers = [1, 2, 3, 4, 5, 99, 55, 88];
-        fruits = ["Apple", "Cherry", "Date", "Banana"];
+        // numbers = [1, 2, 3, 4, 5, 99, 55, 88];
+        // fruits = ["Apple", "Cherry", "Date", "Banana"];
 
-        // const sort=  numbers.sort();
+        // const sort=  numbers.sort().reverse();
         // const fr=  fruits.sort().reverse();
         // console.log(sort)
         // console.log(fr);
 
-        // 18. join() - Converts array to a string
-        // const fr= fruits.join().split(",");
+        // // 18. join() - Converts array to a string
+        // const fr= fruits.join().split();
         // console.log(fr);
 
 
@@ -322,12 +339,18 @@
 
         // const nm1 = numbers.some((n)=> n > 2)
         // console.log(nm1);
+
         // 20. every() - Checks if all elements meet a condition
-        // const nm = numbers.every((n)=> n > 0)
+        // const nm = numbers.every((n)=> n > 5)
         // console.log(nm);
 
 
+        const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
 
+        fruits1.splice( 1, 0, );
+
+        console.log(fruits1);
+        
 
 
     </script>
